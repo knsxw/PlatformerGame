@@ -1,0 +1,101 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Define new color variables */
+:root {
+  --main-bg-color: #1a1a2e; /* Dark blue-gray */
+  --section-bg-color: #f0f0f5; /* Light grayish white */
+  --accent-color: #3a86ff; /* Bright blue */
+  --btn-hover-gradient: linear-gradient(#82b1ff, #3a86ff); /* Light to bright blue */
+  --btn-gradient: linear-gradient(#8ecae6, #219ebc); /* Light to medium blue */
+}
+
+body {
+  background-color: var(--main-bg-color);
+  font-family: 'Arial', sans-serif;
+  color: #ffffff; 
+  line-height: 1.6;
+}
+
+.start-screen, .checkpoint-screen {
+  background-color: var(--section-bg-color);
+  border-radius: 30px;
+  padding: 20px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 700px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.start-screen {
+  padding-bottom: 5px;
+}
+
+.main-title, .instructions {
+  color: #1a1a2e; 
+}
+
+.main-title {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.instructions {
+  font-size: 1.2rem;
+  margin: 15px 0;
+  line-height: 2rem;
+}
+
+.btn {
+  display: inline-block;
+  cursor: pointer;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #ffffff; /* White text for contrast */
+  background-color: var(--accent-color); 
+  background-image: var(--btn-gradient); 
+  border: 3px solid var(--accent-color);
+  border-radius: 25px;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background-image: var(--btn-hover-gradient);
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.checkpoint-screen {
+  display: none;
+  max-width: 300px;
+  padding: 10px;
+  border-radius: 20px;
+  color: #1a1a2e;
+}
+
+#canvas {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .start-screen {
+    width: 60%;
+  }
+
+  .checkpoint-screen {
+    width: 40%;
+  }
+}
